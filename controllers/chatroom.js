@@ -7,5 +7,8 @@ router.get('/new' , (req, res) => {
   res.render('chat/new.ejs')
 })
 
+router.get('/profile', (req, res) => {
+  res.render('chat/profile.ejs')
+})
 
 module.exports = router;

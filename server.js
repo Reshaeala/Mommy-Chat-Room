@@ -32,6 +32,7 @@ app.use('/chatroom', chatroomController)
 
 const userController = require('./controllers/user.js')
 app.use('/user', userController)
+
 app.get('/', (req, res) => {
   res.render('home.ejs')
 })

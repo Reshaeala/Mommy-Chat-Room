@@ -14,10 +14,6 @@ router.get('/login', (req,res) => {
 })
 
 
-router.get('/profile', (req, res) => {
-  res.render('session/profile.ejs')
-})
-
 router.post('/', (req, res) => {
   User.findOne({username: req.body.username}, (err, foundUser) => {
     if (foundUser === null) {
@@ -29,7 +25,7 @@ router.post('/', (req, res) => {
       if (doesPasswordMatch) {
         //set cookie this will be also put in the fruits.js file
         req.session.user = foundUser
-        res.redirect('/session/profile');
+        res.redirect('/chatroom/profile');
       }else {
         res.redirect('/session/login')
       }
