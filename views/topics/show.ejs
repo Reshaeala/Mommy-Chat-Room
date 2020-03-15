@@ -6,11 +6,30 @@
   </head>
   <body>
 
-    <h1> <%=topics.name %> show page</h1>
+    <h1>show page</h1>
 
-      <form action="/room" method="post">
+    <ul id="messages"></ul>
+  <form action="">
+    <input id="m" autocomplete="off" /><button>Send</button>
+  </form>
 
-      </form>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+  <script>
+    $(() => {
+      const socket = io();
+      $('form').submit((e) =>{
+        e.preventDefault();
+        socket.emit('chat message', $('#m').val());
+        $('#m').val('');
+        return false;
+      });
+      socket.on('chat message', (msg) =>{
+        $('#messages').append($('<li>').text(msg));
+      });
+    });
+  </script>
 
     <nav>
       <a href="/topics">Back to topics</a>

@@ -11,8 +11,24 @@ const dbupdateobject = {
     useUnifiedTopology: true,
     useFindAndModify: false
 };
+///////////////////////////////////////////////////
+
+const http = require('http').Server(app);
+const io = require('socket.io')(http);
+const port = process.env.PORT || 3001;
 
 
+app.get('/topics/:id', (req, res) => {
+  res.render(__dirname + '/views/topics/show.ejs');
+});
+
+io.on('connection', (socket) => {
+  socket.on('chat message', (msg)=> {
+    io.emit('chat message', msg);
+  });
+});
+
+///////////////////////////////////////////////////
 app.use(session({
   secret:'feedmeseymour',
   resave: false,
@@ -45,8 +61,8 @@ const sessionController = require('./controllers/session.js');
 app.use('/session', sessionController);
 
 ////////////////////////////////////////////////////////////////////
-
-
+const chatController = require('./controllers/chat.js');
+app.use('/chat', chatController)
 
 // Connect to Mongo
 mongoose.connect(process.env.DATABASE_URL, dbupdateobject);
@@ -60,6 +76,6 @@ db.on('open', () => {
 });
 
 
-app.listen(process.env.PORT, () => {
+http.listen(process.env.PORT, () => {
   console.log(`Listening on port ${process.env.PORT}`);
 })
