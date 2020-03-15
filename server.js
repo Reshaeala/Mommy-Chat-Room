@@ -12,7 +12,7 @@ const dbupdateobject = {
     useFindAndModify: false
 };
 ///////////////////////////////////////////////////
-
+//socket io
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
 const port = process.env.PORT || 3001;
