@@ -1,15 +1,22 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html>
   <head>
-    <meta charset="utf-8">
-    <title></title>
+    <%- include ('../partials/head.ejs') %>
   </head>
   <body>
-    <h1>Edit Page</h1>
-    <form action="/topics/<%=topic.id%>?_method=PUT" method="POST">
-        Name: <input type="text" name="name"/><br/>
+  <section class="section">
+    <div class="container">
+      <h1 class="title">Edit Page</h1>
+      <form action="/topics/<%=topic.id%>?_method=PUT" method="POST">
+          Name: <input type="text" name="name"/><br/>
 
-        <input type="submit" value="Edit Topic"/>
-    </form>
+          <input type="submit" value="Edit Topic"/>
+      </form>
+    </div>
+
+  </section>
+  <nav>
+    <a href="/topics">Back to topics</a>
+  </nav>
   </body>
 </html>

@@ -31,10 +31,6 @@ router.post('/', (req, res) => {
 
 })
 
-//gets the new topic page
-router.get('/new', (req, res) => {
-  res.render('topics/new.ejs');
-})
 
 
 //once we do this the :id will not work anymore. This will find the _id in mongoose when we put findById
@@ -48,15 +44,15 @@ router.get('/new', (req, res) => {
 
 
 
-router.get('/:id', (req, res) => {
-  Topic.findById(req.params.id, (err, foundTopics) => {
-    res.render('topics/show.ejs', {
-      topics:foundTopics
-
-    })
-    console.log(topics);
-  })
-})
+// router.get('/:id', (req, res) => {
+//   Topic.findById(req.params.id, (err, foundTopics) => {
+//     res.render('topics/show.ejs', {
+//       topics:foundTopics
+//
+//     })
+//     console.log(topics);
+//   })
+// })
 
 router.get('/', (req, res)=>{
   //this will test to see if the user matches to log in
@@ -74,6 +70,7 @@ router.get('/', (req, res)=>{
   res.redirect('/')
 }
 });
+
 
 
 router.delete('/:id', (req, res) => {

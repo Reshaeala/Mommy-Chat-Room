@@ -20,6 +20,8 @@
   "homepage": "https://github.com/Reshaeala/Projectsample#readme",
   "dependencies": {
     "bcrypt": "^4.0.1",
+    "bulma": "^0.8.0",
+    "bulma-start": "0.0.3",
     "dotenv": "^8.2.0",
     "ejs": "^3.0.1",
     "express": "^4.17.1",

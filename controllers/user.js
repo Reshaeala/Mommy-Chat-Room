@@ -21,6 +21,24 @@ router.post('/', (req, res) => {
   })
 })
 
+router.put('/:id', (req, res)=>{
+    User.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, update) => {
+      res.redirect('/user/:id')
+    })
+});
+
+router.get('/:id', (req, res)=>{
+    User.findById(req.params.id, (err, foundUser)=>{
+        res.render(
+    		'user/profile.ejs',
+    		{
+    			user: foundUser
+    		}
+
+    	);
+    });
+});
+
 
 
 module.exports = router;

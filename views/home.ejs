@@ -1,22 +1,21 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html>
   <head>
-    <meta charset="utf-8">
-    <title></title>
+    <%- include ('./partials/head.ejs') %>
   </head>
   <body>
-    <h1>HOME PAGE</h1>
-    <nav>
-      <ul>
-        <li>
-            <a href="/session/login">Log In</a>
-        </li>
+  <div class="hero is-primary  ">
+    <div class="hero-body ">
+      <h1 class="title is-1 columns is-mobile is-centered">MOMMY'S PLACE</h1>
 
-        <li>
-          <a href="/user/new">Sign Up</a>
-        </li>
-      </ul>
+      <nav>
+            <h2 class="subtitle columns is-mobile is-centered"> <a href="/session/login">Log In</a></h2>
+          <h2 class="subtitle columns is-mobile is-centered">  <a href="/user/new">Sign Up</a></h2>
+        </div>
+          <img src="https://images.pexels.com/photos/3771095/pexels-photo-3771095.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
 
-    </nav>
+      </nav>
+    </div>
+  </section>
   </body>
 </html>

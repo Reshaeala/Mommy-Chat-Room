@@ -6,25 +6,46 @@ const db = mongoose.connection;
 const multer = require('multer');
 const methodOverride = require('method-override')
 const session = require('express-session')
+const Topic = require('./models/topics.js')
+const User = require('./models/user.js')
+const Chat = require('./models/chat.js')
+
 const dbupdateobject = {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false
 };
+
+
 ///////////////////////////////////////////////////
-//socket io
+//socket io with the help of a bunch of different youtube videos and the socket io website
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
 const port = process.env.PORT || 3001;
 
+//gets the new topic page
+app.get('/new', (req,res) => {
+  res.render('./topics/new.ejs')
+})
 
 app.get('/topics/:id', (req, res) => {
-  res.render(__dirname + '/views/topics/show.ejs');
+  Topic.findById(req.params.id, (err, foundTopics) => {
+  res.render(__dirname + '/views/topics/show.ejs',
+  {
+    topics:foundTopics,
+    // user: req.session.user
+  }
+);
 });
+})
 
+
+const user = {};
 io.on('connection', (socket) => {
+  console.log('New user connected');
   socket.on('chat message', (msg)=> {
-    io.emit('chat message', msg);
+    console.log(msg);
+    io.emit('chat message',msg);
   });
 });
 
@@ -61,8 +82,6 @@ const sessionController = require('./controllers/session.js');
 app.use('/session', sessionController);
 
 ////////////////////////////////////////////////////////////////////
-const chatController = require('./controllers/chat.js');
-app.use('/chat', chatController)
 
 // Connect to Mongo
 mongoose.connect(process.env.DATABASE_URL, dbupdateobject);

@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html>
   <head>
-    <meta charset="utf-8">
-    <title></title>
+    <%- include ('../partials/head.ejs') %>
   </head>
   <body>
+  <section class="section">
+    <h1 class="title"><%=topics.name%> show page</h1>
+    <div class="">
 
-    <h1>show page</h1>
 
     <ul id="messages"></ul>
+    </div>
   <form action="">
-    <input id="m" autocomplete="off" /><button>Send</button>
+    <textarea id="m" rows="8" cols="80" autocomplete="off"></textarea><button>Send</button>
   </form>
 
 
@@ -18,6 +20,7 @@
   <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
   <script>
     $(() => {
+
       const socket = io();
       $('form').submit((e) =>{
         e.preventDefault();
@@ -33,6 +36,10 @@
 
     <nav>
       <a href="/topics">Back to topics</a>
+      <a href="user/<%=user._id%>">profile page</a>
     </nav>
+    </div>
+
+  </section>
   </body>
 </html>

@@ -1,16 +1,23 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html>
   <head>
-    <meta charset="utf-8">
-    <title></title>
+    <%- include ('../partials/head.ejs') %>
   </head>
   <body>
-    <h1>New user page</h1>
+    <h1 class="title is-1">New user page</h1>
+    <div class="field is-horizontal" width="600px">
+    <div class="field-body">
 
     <form action="/user" method="post">
-      Username:<input type="text" name="username"/> <br>
-      Password: <input type="text" name="password"/><br>
-      <input type="submit" value="Register"/>
+      <div class="field">
+      Username:  <input class="input"type="text" name="username" placeholder="username"><br>
+
+      password: <input class="input" type="password" name="password" placeholder="password"><br>
+      <button class="button is-primary">Submit</button>
     </form>
+    </div>
+  </div>
+</div>
+  </section>
   </body>
 </html>

@@ -1,37 +1,41 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <title></title>
-</head>
-<body>
-  <h1>topics index page</h1>
-  Welcome, <%=user.username%>
+  <head>
+    <%- include ('../partials/head.ejs') %>
+  </head>
+  <body>
+  <section class="section">
+    <div class="container">
+      <h1 class="title">topics index page</h1>
+      Welcome, <%=user.username%>
 
-  <ul>
-    <%
-    for(let i = 0; i < topics.length; i++){ %>
+      <ul>
+        <%
+        for(let i = 0; i < topics.length; i++){ %>
 
-      <li>
+          <li>
 
-        <a href="/topics/<%=topics[i].id%>">
-          <%=topics[i].name;%>
-        </a>
+            <a href="/topics/<%=topics[i].id%>">
+              <%=topics[i].name;%>
+            </a>
 
-        <form action="/topics/<%=topics[i].id; %>?_method=DELETE" method="POST">
-          <input type="submit" value="DELETE"/>
+            <form action="/topics/<%=topics[i].id; %>?_method=DELETE" method="POST">
+              <input type="submit" value="DELETE"/>
 
 
-        </form>
-        <a href="/topics/<%=topics[i].id%>/edit">Edit</a>
-      </li>
-      <%
-    }
-    %>
-  </ul>
-  <nav>
-    <a href="/topics/new">New topics</a>
+            </form>
+            <a href="/topics/<%=topics[i].id%>/edit">Edit</a>
+          </li>
+          <%
+        }
+        %>
+      </ul>
+      <nav>
+        <a href="/new">New topics</a>
+        <a href="user/<%=user._id%>">profile page</a>
+      </nav>
+    </div>
 
-  </nav>
-</body>
+  </section>
+  </body>
 </html>

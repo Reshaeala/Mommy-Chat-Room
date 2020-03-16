@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title></title>
-    </head>
-    <body>
-        <h1>New topics page</h1>
-        <form action="/topics" method="POST">
-            Topic: <input type="text" name="name" /><br/>
-            <input type="submit" name="" value="Create Topic"/>
-        </form>
-    </body>
+  <head>
+    <%- include ('../partials/head.ejs') %>
+  </head>
+  <body>
+  <section class="section">
+    <div class="container">
+      <h1 class="title">New topics page</h1>
+      <form action="/topics" method="POST">
+          Topic: <input type="text" name="name" /><br/>
+          <input type="submit" name="" value="Create Topic"/>
+      </form>
+    </div>
+
+  </section>
+  <nav>
+    <a href="/topics">Back to topics</a>
+  </nav>
+  </body>
 </html>

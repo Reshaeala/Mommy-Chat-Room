@@ -1,17 +1,28 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html>
   <head>
-    <meta charset="utf-8">
-    <title></title>
+    <%- include ('../partials/head.ejs') %>
   </head>
   <body>
-    <h1>PROFILE PAGE</h1>
-    Welcome
+    <h1>Hey <%=user.username%>! Welcome to your Profile Page</h1>
+    <!-- <form action="/user/<%=user.id%>?_method=PUT" method="POST">
+        Username: <input type="text" name="username" value=""/><br/>
+
+        <input type="submit" value="Edit Profile"/>
+    </form> -->
     <!-- <form action="session/upload" method="post" enctype="multipart/form-data">
       <input type="text" name="title" placeholder="Title">
       <input type="file" name="image">
       <input type="submit" value="upload">
     </form> -->
 
+    </div>
+    <ul>
+
+    </ul>
+      <nav>
+        <a href="/topics">Back to topics</a>
+      </nav>
+  </section>
   </body>
 </html>
