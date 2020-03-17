@@ -3,20 +3,26 @@
   <head>
     <%- include ('../partials/head.ejs') %>
   </head>
-  <body>
+  <body class="has-background-primary">
   <section class="section">
-    <div class="container">
-      <h1 class="title">Edit Page</h1>
-      <form action="/topics/<%=topic.id%>?_method=PUT" method="POST">
-          Name: <input type="text" name="name"/><br/>
+    <div class="container topic">
 
-          <input type="submit" value="Edit Topic"/>
+      <nav class="has-text-white">
+        <a href="/topics">Back to topics</a>
+      </nav>
+
+      <h1 class="title">Edit Topic</h1>
+
+      <form class="new" action="/topics/<%=topic.id%>?_method=PUT" method="POST">
+          Name: <input class="input is-rounded"type="text" name="name"/><br/>
+            <div class="buttons has-addons is-centered">
+          <button class="button is-danger is-inverted">Edit Topic</button>
+          </div>
       </form>
     </div>
 
   </section>
-  <nav>
-    <a href="/topics">Back to topics</a>
-  </nav>
+
+  <img class="writing"src="https://images.unsplash.com/photo-1471107340929-a87cd0f5b5f3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1566&q=80" width="100%">
   </body>
 </html>
