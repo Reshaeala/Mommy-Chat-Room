@@ -6,13 +6,17 @@
   <body>
   <section class="section">
     <h1 class="title"><%=topics.name%> show page</h1>
-    <div class="">
-
-
+    <nav>
+      <a href="/topics">Back to topics</a>
+    </nav>
+    <br>
+    <div class="words">
     <ul id="messages"></ul>
     </div>
-  <form action="">
-    <textarea id="m" rows="8" cols="80" autocomplete="off"></textarea><button>Send</button>
+
+  <form class="talks">
+    <input class="input is-danger" id="m" autocomplete="off">
+    <button class="button is-danger is-inverted">Send</button>
   </form>
 
 
@@ -34,11 +38,6 @@
     });
   </script>
 
-    <nav>
-      <a href="/topics">Back to topics</a>
-      <a href="user/<%=user._id%>">profile page</a>
-    </nav>
-    </div>
 
   </section>
   </body>

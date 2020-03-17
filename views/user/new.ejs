@@ -4,20 +4,33 @@
     <%- include ('../partials/head.ejs') %>
   </head>
   <body>
-    <h1 class="title is-1">New user page</h1>
-    <div class="field is-horizontal" width="600px">
+      <img src="/img/warning.png" class="logo" >
+    <h1 class="title is-1">New Mommy Page</h1>
+    <div class="field is-horizontal box hero has-background-danger" width="600px">
     <div class="field-body">
 
     <form action="/user" method="post">
       <div class="field">
       Username:  <input class="input"type="text" name="username" placeholder="username"><br>
 
-      password: <input class="input" type="password" name="password" placeholder="password"><br>
-      <button class="button is-primary">Submit</button>
+      Password: <input class="input" type="password" name="password" placeholder="password"><br>
+
+      <div class="buttons has-addons is-centered">
+      <button class="button is-primary is-light">Submit</button>
+
+        </div>
+
+        </div>
     </form>
-    </div>
   </div>
+
 </div>
   </section>
+
+    <div class="buttons has-addons is-centered">
+  <button type="button" class="button is-primary is-light"><a href="/session/login">Log In Page</a></button>
+    <button type="button" class="button is-primary is-light"><a href="/">Home Page</a></button><br>
+  </div>
+
   </body>
 </html>

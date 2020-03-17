@@ -1,0 +1,103 @@
+
+form{
+  width: 100%;
+  padding: 10px;
+  border: #1ad1b2 1px solid;
+  color: white;
+  background-color: #F14668;
+}
+body{
+  background-color: #1ad1b2;
+}
+.title{
+  text-align: center;
+  padding: 10px;
+  color: white;
+}
+.box{
+margin: auto;
+width: 50%;
+padding: 35px;
+border: #1ad1b2 1px solid;
+}
+
+.buttons{
+  padding: 5px;
+  margin: 5px
+}
+.button{
+  margin: 5px;
+}
+.logo{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%
+}
+
+h1{
+  font-family: 'Permanent Marker', sans-serif;
+}
+.section {
+    padding: 1rem 1.5rem;
+}
+.pic{
+  display: block;
+ margin-left: auto;
+ margin-right: auto;
+}
+.topic{
+  width: 50%;
+  text-align: center;
+}
+a{
+  color:#F14668;
+}
+.gone{
+  background-color: #1ad1b2;
+}
+.card{
+text-align: center;
+max-width: 50%;
+}
+span{
+  margin: 10px;
+    width: 8em;
+}
+.one{
+  width: 8em;
+  margin: auto;
+}
+.content ul {
+    list-style: disc outside;
+    margin-left: 0em;
+    margin-top: 0em;
+}
+
+.momics{
+  border: 1px #F14668 solid;
+}
+
+.writing{
+   margin:5em 5em 5em 22em;
+}
+.stuff{
+  border: 1px #F14668 solid;
+  list-style-type: none;
+}
+
+.talks{
+  position: fixed;
+left: 0;
+bottom: 0;
+width: 100%;
+color: white;
+text-align: center;
+}
+.messages{
+  height: auto;
+}
+.words{
+  background: white;
+  height: inherit;
+}

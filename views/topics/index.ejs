@@ -6,36 +6,53 @@
   <body>
   <section class="section">
     <div class="container">
-      <h1 class="title">topics index page</h1>
-      Welcome, <%=user.username%>
+      <h1 class="title">Hot Topics</h1>
+<div class="tabs">
+  <ul>
+    <li class="momics"><a href="/new">New topics</a></li>
+    <li class="momics"><a href="user/<%=user._id%>">profile page</a></li>
+  </ul>
+</div>
 
-      <ul>
-        <%
-        for(let i = 0; i < topics.length; i++){ %>
+      <p class="subtitle is-3">Welcome, <%=user.username%></p>
 
-          <li>
+  </ul>
 
-            <a href="/topics/<%=topics[i].id%>">
-              <%=topics[i].name;%>
-            </a>
+  <div class="box">
+  <article class="media">
+    <div class="media-content has-text-centered">
+      <div class="content">
 
-            <form action="/topics/<%=topics[i].id; %>?_method=DELETE" method="POST">
-              <input type="submit" value="DELETE"/>
+          <ul>
+              <%
+              for(let i = 0; i < topics.length; i++){ %>
+                <div>
+                <li class="stuff">
+
+                <p class="subtitle is-2 topics"><a href="/topics/<%=topics[i].id%>">
+                    <%=topics[i].name;%>
+                  </a></p>
+                  <span>
+                    <form class="one button is-danger is-light card-footer-item" action="/topics/<%=topics[i].id; %>?_method=DELETE" method="POST">
+                      <input class="button is-danger is-light" type="submit" value="DELETE"/>
+                    </form>
+                  </span>
 
 
-            </form>
-            <a href="/topics/<%=topics[i].id%>/edit">Edit</a>
-          </li>
-          <%
-        }
-        %>
-      </ul>
-      <nav>
-        <a href="/new">New topics</a>
-        <a href="user/<%=user._id%>">profile page</a>
-      </nav>
+                  <span>
+                    <a class="one button is-danger is-light card-footer-item" href="/topics/<%=topics[i].id%>/edit">Edit</a>
+                  </li>
+                  <%
+                }
+                %>
+              </span>
+        </div>
+      </div>
     </div>
-
+  </article>
+</div>
+</div>
   </section>
+
   </body>
 </html>
