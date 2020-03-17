@@ -23,7 +23,7 @@ router.post('/', (req, res) => {
       req.session.user = foundUser
       res.redirect('/topics');
     } else {
-      res.redirect('/session/new')
+      res.redirect('/session/login')
     }
     }
 
