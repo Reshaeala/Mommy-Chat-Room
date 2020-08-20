@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/Reshaeala/Projectsample#readme",
   "dependencies": {
-    "bcrypt": "^4.0.1",
+    "bcrypt": "^5.0.0",
     "bulma": "^0.8.0",
     "bulma-start": "0.0.3",
     "dotenv": "^8.2.0",
